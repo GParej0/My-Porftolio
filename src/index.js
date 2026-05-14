@@ -4,15 +4,15 @@ function renderHeader(){
     const headerSection = document.querySelector(".header");
     headerSection.innerHTML = `
         <div class="title">
-            <a href=".home" class="logo">&lt;<strong>G</strong>PA /&gt;</a>
+            <a href="#home" class="logo">&lt;<strong>G</strong>PA/&gt;</a>
         </div>
         <nav class="header-nav">
             <ul>
-                <li class="navHome"><a href=".home">Home</a></li>
-                <li class="navAbout"><a href=".about">About</a></li>
-                <li class="navProjects"><a href=".projects">Projects</a></li>
+                <li class="navHome"><a href="#home">Home</a></li>
+                <li class="navAbout"><a href="#about">About</a></li>
+                <li class="navProjects"><a href="#projects">Projects</a></li>
             </ul>
-            <div class="navContact"><a href=".contact" class="contactLink">Contact</a></div>
+            <div class="navContact"><a href="#contact" class="contactLink">Contact</a></div>
         </nav>
     `
 }
@@ -50,7 +50,7 @@ function renderAbout(){
     let skillsHTML = ``;
     
     aboutInfo.skills.forEach((skill) => {
-        skillsHTML += `<span class="skill-tag">${skill}</span>`
+        skillsHTML += `<span class="skill-tag">${skill} </span>`
     });
 
     aboutSection.innerHTML = `
@@ -60,15 +60,15 @@ function renderAbout(){
             <div class="about-content">
                 <p class="section-content">${aboutInfo.description}</p>
             </div>
-            <div class="tech-stack-section">
-                <p class="label-green">Tech Stack</p>
-                <h3 class="tech-title">What I'm good at 💻</h3>
-                
-                <div class="skills-pill">
-                    ${skillsHTML}
-                </div>
-            </div>
             <div class="about-details-grid">
+                <div class="tech-stack-section">
+                    <p class="label-green">Tech Stack</p>
+                    <h3 class="tech-title">What I'm good at 💻</h3>
+                    
+                    <div class="skills-pill">
+                        ${skillsHTML}
+                    </div>
+                </div>
                 <div class="detail-item">
                     <p class="label-green">Specialty</p>
                     <p class="detail-text">${aboutInfo.specialty}</p>
@@ -98,7 +98,7 @@ const projects = [
     },
     {
         name: "Weather app",
-        description: "A modern and responsive Weather App built with HTML, CSS, and JavaScript.This project allows users to search for real-time weather information for any city using a weather API.",
+        description: "A modern and responsive Weather App built with HTML, CSS, and JavaScript.",
         techs: ["HTML", "CSS", "JavaScript"],
         linkGit: "https://github.com/GParej0/WeatherApp",
         linkLive: "https://gparej0.github.io/WeatherApp/",
@@ -106,7 +106,7 @@ const projects = [
     },
     {
         name: "Mercedes-Benz Landing Page",
-        description: "A modern, elegant, and fully responsive landing page inspired by the Mercedes-Benz brand. This project focuses on semantic HTML, advanced CSS styling, and modern layout techniques (Flexbox and Grid) to create a seamless experience across all devices—from desktop monitors to mobile phones.",
+        description: "A modern, elegant, and fully responsive landing page inspired by the Mercedes-Benz brand. ",
         techs: ["HTML", "CSS"],
         linkGit: "https://github.com/GParej0/Merecedes-Benz-Landing-Page",
         linkLive: "https://gparej0.github.io/Merecedes-Benz-Landing-Page/",
@@ -130,13 +130,13 @@ function renderProjects(){
     projects.forEach((project) =>{
         let techsHTML = ``;
         project.techs.forEach((tech) =>{
-            techsHTML += `<span class="tech-tag">${tech}</span>`
+            techsHTML += `<span class="tech-tag">${tech} </span>`
         })
 
         projectHTML += `
             <div class="project-card">
                 <div class="project-img-container">
-                    <img src="${project.preview}" alt="Preview ${project.name}" class="project-img">
+                    <a href="${project.linkLive}" target="_blank" rel="noopener noreferrer"><img src="${project.preview}" alt="Preview ${project.name}" class="project-img"></a>
                 </div>
                 <div class="project-info">
                     <h3 class="project-title">${project.name}</h3>
@@ -145,7 +145,7 @@ function renderProjects(){
                     
                     <div class="project-links">
                         <a href="${project.linkLive}" target="_blank" rel="noopener noreferrer" class="btn-live">Live Demo 🔗</a>
-                        <a href="${project.linkGit}" target="_blank" rel="noopener noreferrer" class="btn-code">GitHub 💻</a>
+                        <a href="${project.linkGit}" target="_blank" rel="noopener noreferrer" class="btn-code">GitHub <img src="./assets/github-svg.svg" class="contactBtn"></a>
                     </div>
                 </div>
             </div>
@@ -183,12 +183,12 @@ function renderContact (){
             <p class="contact-message">${contactInfo.message}</p>
             
             <div class="contact-links">
-                <a href="mailto:${contactInfo.mail}" class="btn-primary"><img src="./assets/email-svg.svg" class="contactBtn">Send me an email</a>
+                <a href="mailto:${contactInfo.mail}" class="btn-primary" title="Send me an email"><img src="./assets/email-svg.svg" class="contactBtn"></a>
                 
-                <a href="${contactInfo.resume}" target="_blank" class="btn-resume"><img src="./assets/curriculum-svg.svg" class="contactBtn">Download CV </a>
+                <a href="${contactInfo.resume}" target="_blank" class="btn-resume" title="Download my CV"><img src="./assets/curriculum-svg.svg" class="contactBtn"></a>
                 
-                <a href="${contactInfo.linkedin}" target="_blank" class="btn-social"><img src="./assets/linkedin-svg.svg" class="contactBtn"></a>
-                <a href="${contactInfo.github}" target="_blank" class="btn-social"><img src="./assets/github-svg.svg" class="contactBtn"></a>
+                <a href="${contactInfo.linkedin}" target="_blank" class="btn-social" title="Access to my Linkedin"><img src="./assets/linkedin-svg.svg" class="contactBtn"></a>
+                <a href="${contactInfo.github}" target="_blank" class="btn-social" title="Access to my Github"><img src="./assets/github-svg.svg" class="contactBtn"></a>
             </div>
         </div>`
 
@@ -203,7 +203,7 @@ function renderFooter (){
         <div class="footer-container">
             <p class="copyright">Designed & Built by Guillermo Parejo &copy; ${currentYear}</p>
 
-            <a href="#" class="back-to-top">↑ Back to top</a>
+            <a href="#" class="back-to-top"><img src="./assets/up-arrow.svg"> Back to top</a>
         </div>
     `
 }
