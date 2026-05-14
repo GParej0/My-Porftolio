@@ -169,7 +169,7 @@ const contactInfo = {
     title: "Get in touch",
     message: "I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
     github: "https://github.com/GParej0",
-    linkedin: "www.linkedin.com/in/guillermoparejo",
+    linkedin: "https://www.linkedin.com/in/guillermoparejo/",
     mail: "guillermoparejo06@gmail.com",
     resume: "./assets/Guillermo_English_CV.pdf",
 }
